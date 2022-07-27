@@ -16,6 +16,7 @@ const typeDefs = gql`
 
     type Mutation {
         createTask(title: String, description: String): Task
+        deleteTask(id: ID): String
     }
 `
 

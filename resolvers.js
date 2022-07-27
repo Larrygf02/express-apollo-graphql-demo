@@ -18,7 +18,13 @@ const resolvers = {
             const new_task = new Task({title, description})
             await new_task.save()
             return new_task
+        },
+        deleteTask: async (_, args) => {
+            const {id} = args
+            await Task.findByIdAndDelete(id)
+            return "TASK DELETED"
         }
+        
     }
 }
 
