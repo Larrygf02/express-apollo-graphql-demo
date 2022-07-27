@@ -13,9 +13,9 @@ const typeDefs = gql`
         getAllTasks: [Task]
     }
 
-    #type Mutation {
-
-    #}
+    type Mutation {
+        createTask(title: String, description: String): Task
+    }
 `
 
 module.exports = { typeDefs }
