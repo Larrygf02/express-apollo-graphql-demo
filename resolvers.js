@@ -23,6 +23,10 @@ const resolvers = {
             const {id} = args
             await Task.findByIdAndDelete(id)
             return "TASK DELETED"
+        },
+        updateTask: async (_, {task, id}) => {
+            let task_updated = await Task.findByIdAndUpdate(id, {$set: task}, {new: true})
+            return task_updated
         }
         
     }
